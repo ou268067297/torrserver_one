@@ -8,13 +8,14 @@ from fastapi import FastAPI
 import uvicorn
 
 
-# 首先从环境变量里获取
-host =  os.getenv("one_host")
-torr_api = f"{os.getenv('torr_api')}/torrents"
-# 如果获取不到就走默认值
-host = host if host else "https://one.52378.fun"
-torr_api = torr_api if torr_api else "http://192.168.31.249:18090/torrents"
-
+# # 首先从环境变量里获取
+# host = os.getenv("one_host")
+# torr_api = f"{os.getenv('torr_api')}/torrents"
+# # 如果获取不到就走默认值
+# host = host if host else "https://one.52378.fun"
+# torr_api = torr_api if torr_api else "http://192.168.31.249:18090/torrents"
+host = "https://one.52378.fun"
+torr_api = "http://192.168.31.249:18090/torrents"
 
 def get_page_list() -> list:
     """ 从网站主页获取详情页，返回一个详情页链接的列表 """

@@ -71,28 +71,28 @@ def main_handle():
                 continue
 
 
-## 开始构建定时任务
-scheduler = BackgroundScheduler()
+# ## 开始构建定时任务
+# scheduler = BackgroundScheduler()
 
-scheduler.add_job(
-    main_handle,
-    "interval",
-    hours=6
-)
+# scheduler.add_job(
+#     main_handle,
+#     "interval",
+#     hours=6
+# )
 
-app = FastAPI()
+# app = FastAPI()
 
-@app.on_event("startup")
-def job_on():
-    job = scheduler.get_jobs()[0]
-    print(job)
+# @app.on_event("startup")
+# def job_on():
+#     job = scheduler.get_jobs()[0]
+#     print(job)
 
-@app.on_event("shutdown")
-def job_down():
-    print("job removed")
+# @app.on_event("shutdown")
+# def job_down():
+#     print("job removed")
 
 
 if __name__ == "__main__":
     
-    uvicorn.run(app="app:app", reload=True)
-    
+    # uvicorn.run(app="app:app", reload=True)
+    main_handle()

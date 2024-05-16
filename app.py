@@ -13,7 +13,7 @@ host =  os.getenv("one_host")
 torr_api = f"{os.getenv('torr_api')}/torrents"
 # 如果获取不到就走默认值
 host = host if host else "https://one.52378.fun"
-torr_api = torr_api if torr_api else "http://172.17.0.1:8090/torrents"
+torr_api = torr_api if torr_api else "http://192.168.31.249:18090/torrents"
 
 
 def get_page_list() -> list:
@@ -76,7 +76,7 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(
     main_handle,
     "interval",
-    hours=6
+    hours=0.1
 )
 
 app = FastAPI()

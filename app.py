@@ -55,6 +55,7 @@ def add_download(magnet: str, image: str):
         "title": ""
     }
     payloads = json.dumps(payloads)
+    print(payloads)
     with requests.post(torr_api, data=payloads) as req:
         print(req.json())
 
